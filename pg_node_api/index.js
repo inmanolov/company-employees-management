@@ -3,6 +3,7 @@ import dotenv from 'dotenv';
 import knex from './data/db.js';
 
 import employeesRoutes from './routes/employees.js';
+import teamsRoutes from './routes/teams.js';
 
 dotenv.config();
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.json());
 const PORT = process.env.PORT || 5010;
 
 app.use('/employees', employeesRoutes);
+app.use('/teams', teamsRoutes);
 
 app.get('/teams', (req, res) => {
     knex.select().from('teams').then((teams) => {
