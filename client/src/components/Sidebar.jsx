@@ -36,58 +36,72 @@ import FlexBetween from "./FlexBetween";
 const navItems = [
     {
         text: "Dashboard",
+        headerName: "Dashboard",
         icon: <HomeOutlined />,
     },
     {
         text: "Employees Facing",
+        headerName: "Employees Facing",
         icon: null,
     },
     {
         text: "Employees",
+        headerName: "Employees",
         icon: <Groups2Outlined />,
     },
     {
         text: "Teams",
+        headerName: "Teams",
         icon: <Groups2Outlined />,
     },
     {
-        text: "Average",
-        icon: <ReceiptLongOutlined />,
-    },
-    {
-        text: "Geography",
+        text: "over-six-months",
+        headerName: "Six Months",
         icon: <PublicOutlined />,
     },
     {
-        text: "Sales",
+        text: "Teams",
+        headerName: "Teams",
         icon: null,
     },
     {
+        text: "Average",
+        headerName: "Average Salary",
+        icon: <ReceiptLongOutlined />,
+    },
+    {
         text: "Overview",
+        headerName: "Overview",
         icon: <PointOfSaleOutlined />,
     },
     {
         text: "Daily",
+        headerName: "Daily",
         icon: <TodayOutlined />,
     },
     {
         text: "Monthly",
+        headerName: "Monthly",
         icon: <CalendarMonthOutlined />,
     },
     {
         text: "Breakdown",
+        headerName: "Breakdown",
         icon: <PieChartOutlined />,
     },
     {
         text: "Management",
+        headerName: "Management",
         icon: null,
     },
     {
         text: "Admin",
+        headerName: "Admin",
         icon: <AdminPanelSettingsOutlined />,
     },
     {
         text: "Performance",
+        headerName: "Performance",
         icon: <TrendingUpOutlined />,
     },
 ];
@@ -144,11 +158,11 @@ const Sidebar = ({
                             </FlexBetween>
                         </Box>
                         <List>
-                            {navItems.map(({ text, icon }) => {
+                            {navItems.map(({ text, icon, headerName }) => {
                                 if (!icon) {
                                     return (
                                         <Typography key={text} sx={{ m: "2.25rem 0 1rem 3rem" }}>
-                                            {text}
+                                            {headerName}
                                         </Typography>
                                     )
                                 }
@@ -183,7 +197,7 @@ const Sidebar = ({
                                             >
                                                 {icon}
                                             </ListItemIcon>
-                                            <ListItemText primary={text} />
+                                            <ListItemText primary={headerName} />
                                             {active === lcText && (
                                                 <ChevronRightOutlined sx={{
                                                     ml: "auto"

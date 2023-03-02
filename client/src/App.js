@@ -12,6 +12,7 @@ import Dashboard from "scenes/dashboard";
 import EmployeesLiveInBulgaria from "scenes/liveInBulgaria";
 import EmployeesInTeam from "scenes/emploueesInTeam";
 import Average from "scenes/average";
+import OverSixMonths from "scenes/overSixMonths";
 
 function App() {
   const mode = useSelector((state) => state.global.mode);
@@ -28,6 +29,7 @@ function App() {
               <Route path='/employees' element={<EmployeesLiveInBulgaria />} />
               <Route path='/teams' element={<EmployeesInTeam />} />
               <Route path='/average' element={<Average />} />
+              <Route path='/over-six-months' element={<OverSixMonths />} />
             </Route>
           </Routes>
         </ThemeProvider>
