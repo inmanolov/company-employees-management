@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import knex from './data/db.js';
-
+import cors from 'cors';
 import employeesRoutes from './routes/employees.js';
 import teamsRoutes from './routes/teams.js';
 
@@ -9,6 +9,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(cors());
 const PORT = process.env.PORT || 5010;
 
 app.use('/employees', employeesRoutes);

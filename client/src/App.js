@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import { useMemo } from "react";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { useSelector } from "react-redux";
+
+import { CssBaseline, ThemeProvider } from "@mui/material";
+import { createTheme } from "@mui/material/styles";
+
+import { themeSettings } from "theme";
+
+import Layout from "scenes/layout";
+import Dashboard from "scenes/dashboard";
+import EmployeesLiveInBulgaria from "scenes/liveInBulgaria";
+import EmployeesInTeam from "scenes/emploueesInTeam";
+import Average from "scenes/average";
 
 function App() {
+  const mode = useSelector((state) => state.global.mode);
+  const theme = useMemo(() => createTheme(themeSettings(mode), [mode]));
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <BrowserRouter>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <Routes>
+            <Route element={<Layout />}>
+              <Route path='/' element={<Navigate to='/dashboard' replace />} />
+              <Route path='/dashboard' element={<Dashboard />} />
+              <Route path='/employees' element={<EmployeesLiveInBulgaria />} />
+              <Route path='/teams' element={<EmployeesInTeam />} />
+              <Route path='/average' element={<Average />} />
+            </Route>
+          </Routes>
+        </ThemeProvider>
+      </BrowserRouter>
     </div>
   );
 }
