@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
     reducerPath: 'adminApi',
-    tagTypes: ['EmployeesLiveInBulgaria', 'AllEmployeesInTeam', 'AverageSalary', 'EmployeesOverSixMonths'],
+    tagTypes: ['EmployeesLiveInBulgaria', 'AllEmployeesInTeam', 'AverageSalary', 'EmployeesOverSixMonths', 'Companies', 'Post'],
     endpoints: (build) => ({
         getEmployeesLiveInBulgaria: build.query({
             query: () => 'employees/bulgarian',
@@ -20,8 +20,23 @@ export const api = createApi({
         getEmployeesOverSixMonths: build.query({
             query: () => 'employees/over-six-months',
             providesTags: ['EmployeesOverSixMonths']
-        })
+        }),
+        getCompanies: build.query({
+            query: () => 'companies',
+            providesTags: ['Companies']
+        }),
+        addUpdateCompany: build.mutation({
+            query: (payload) => ({
+                url: `companies/${payload.id}`,
+                method: 'POST',
+                body: payload,
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            }),
+            invalidatesTags: ['Post'],
+        }),
     }),
 })
 
-export const { useGetEmployeesLiveInBulgariaQuery, useGetAllEmployeesInTeamQuery, useGetAverageSalaryQuery, useGetEmployeesOverSixMonthsQuery } = api;
+export const { useGetEmployeesLiveInBulgariaQuery, useGetAllEmployeesInTeamQuery, useGetAverageSalaryQuery, useGetEmployeesOverSixMonthsQuery, useGetCompaniesQuery, useAddUpdateCompanyMutation } = api;

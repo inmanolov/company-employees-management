@@ -57,7 +57,7 @@ const navItems = [
     {
         text: "over-six-months",
         headerName: "Six Months",
-        icon: <PublicOutlined />,
+        icon: <CalendarMonthOutlined />,
     },
     {
         text: "Teams",
@@ -70,9 +70,14 @@ const navItems = [
         icon: <ReceiptLongOutlined />,
     },
     {
-        text: "Overview",
+        text: "Companies",
+        headerName: "Companies",
+        icon: null,
+    },
+    {
+        text: "Companies",
         headerName: "Overview",
-        icon: <PointOfSaleOutlined />,
+        icon: <PublicOutlined />,
     },
     {
         text: "Daily",

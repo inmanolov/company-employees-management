@@ -14,6 +14,8 @@ import EmployeesInTeam from "scenes/emploueesInTeam";
 import Average from "scenes/average";
 import OverSixMonths from "scenes/overSixMonths";
 
+import Companies from "scenes/companies";
+
 function App() {
   const mode = useSelector((state) => state.global.mode);
   const theme = useMemo(() => createTheme(themeSettings(mode), [mode]));
@@ -30,6 +32,7 @@ function App() {
               <Route path='/teams' element={<EmployeesInTeam />} />
               <Route path='/average' element={<Average />} />
               <Route path='/over-six-months' element={<OverSixMonths />} />
+              <Route path='/companies' element={<Companies />} />
             </Route>
           </Routes>
         </ThemeProvider>

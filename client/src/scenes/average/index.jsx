@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, useTheme } from "@mui/material";
+import { Box, Typography, useTheme } from "@mui/material";
 import { DataGrid } from "@mui/x-data-grid";
 
 import { useGetAverageSalaryQuery } from "state/api";
@@ -43,7 +43,7 @@ const Average = () => {
     ];
     return (
         <Box m="1.5rem 2.5rem">
-            <Header title="Average salary" subtitle="Average salary by department" />
+            <Header title="Average salary" subtitle="Average salary for teams by department" />
             <Box mt="40px" height="75vh"
                 sx={{
                     "& .MuiDataGrid-root": {
