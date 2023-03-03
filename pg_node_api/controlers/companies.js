@@ -10,7 +10,7 @@ export const getCompanies = async(req, res) => {
     } catch (error) {
         res.status(404).json({ message: error.message });
     }
-}
+};
 
 export const updateCompany = async(req, res) => {
     try {
@@ -20,6 +20,34 @@ export const updateCompany = async(req, res) => {
             .where('id', id)
             .update({ name: name, country: country });
 
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+};
+
+export const addCompany = async(req, res) => {
+    try {
+        const { name, country } = req.body;
+
+        await knex('companies')
+            .insert({
+                name: name,
+                country: country,
+            })
+
+    } catch (error) {
+        res.status(404).json({ message: error.message });
+    }
+};
+
+export const deleteCompany = async(req, res) => {
+    try {
+        const { id } = req.params
+        
+        await knex('companies')
+            .where('id', id)
+            .del()
+            
     } catch (error) {
         res.status(404).json({ message: error.message });
     }

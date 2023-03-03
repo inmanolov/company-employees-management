@@ -40,6 +40,16 @@ const navItems = [
         icon: <HomeOutlined />,
     },
     {
+        text: "Companies",
+        headerName: "Companies",
+        icon: null,
+    },
+    {
+        text: "Companies",
+        headerName: "CRUD Companies",
+        icon: <PublicOutlined />,
+    },
+    {
         text: "Employees Facing",
         headerName: "Employees Facing",
         icon: null,
@@ -68,16 +78,6 @@ const navItems = [
         text: "Average",
         headerName: "Average Salary",
         icon: <ReceiptLongOutlined />,
-    },
-    {
-        text: "Companies",
-        headerName: "Companies",
-        icon: null,
-    },
-    {
-        text: "Companies",
-        headerName: "Overview",
-        icon: <PublicOutlined />,
     },
     {
         text: "Daily",

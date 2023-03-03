@@ -79,7 +79,7 @@ const EmployeesInTeam = () => {
             <Header title="Teams" subtitle="List of employees in certain team" />
             <Box mt='40px' height="75vh">
                 {teams && Object.entries(teams[0]).map((team, id) => (
-                    <Box>
+                    <Box key={id}>
                         <Button onClick={handleClick} sx={{ display: "flex", justifyContent: "space-between", alignItems: "center", textTransform: "none", gap: "1rem" }}>
                             <Box textAlign='left'>
                                 <Typography
@@ -99,8 +99,8 @@ const EmployeesInTeam = () => {
                                 <Typography fontWeight="bold">First Name</Typography>
                                 <Typography fontWeight="bold">Last Name</Typography>
                             </FlexBetween>
-                            {team[1].map((employee) => (
-                                <FlexBetween m="15px">
+                            {team[1].map((employee, id) => (
+                                <FlexBetween m="15px" key={employee[0]}>
                                     <Typography>{employee[0]}</Typography>
                                     <Typography>{employee[1]}</Typography>
                                     <Typography>{employee[2]}</Typography>
