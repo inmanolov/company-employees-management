@@ -9,7 +9,7 @@ import Header from "components/Header";
 const OverSixMonths = () => {
     const theme = useTheme();
     const { data, isLoading } = useGetEmployeesOverSixMonthsQuery();
-
+    
     const columns = [
         {
             field: "Start Date",
@@ -75,7 +75,7 @@ const OverSixMonths = () => {
             >
                 <DataGrid
                     loading={isLoading || !data}
-                    getRowId={(row) => row.Company}
+                    getRowId={(row) => row.employeeId}
                     rows={data || []}
                     columns={columns}
                 />

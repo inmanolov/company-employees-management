@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import { Box, Typography, useTheme, Table, TableBody, TableContainer, TableHead, TableCell, TableRow, Paper, Popper, TextField, Button } from "@mui/material";
 import SystemUpdateAltIcon from '@mui/icons-material/SystemUpdateAlt';
 import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
-import { DataGrid } from "@mui/x-data-grid";
 import Header from "components/Header";
 
 import { useGetCompaniesQuery, useAddUpdateCompanyMutation, useAddCompanyMutation, useDeleteCompanyMutation } from "state/api";

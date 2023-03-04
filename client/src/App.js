@@ -13,6 +13,7 @@ import EmployeesLiveInBulgaria from "scenes/liveInBulgaria";
 import EmployeesInTeam from "scenes/emploueesInTeam";
 import Average from "scenes/average";
 import OverSixMonths from "scenes/overSixMonths";
+import Employees from "scenes/employees";
 
 import Companies from "scenes/companies";
 
@@ -28,11 +29,12 @@ function App() {
             <Route element={<Layout />}>
               <Route path='/' element={<Navigate to='/dashboard' replace />} />
               <Route path='/dashboard' element={<Dashboard />} />
-              <Route path='/employees' element={<EmployeesLiveInBulgaria />} />
+              <Route path='/employees-in-bg' element={<EmployeesLiveInBulgaria />} />
               <Route path='/teams' element={<EmployeesInTeam />} />
               <Route path='/average' element={<Average />} />
               <Route path='/over-six-months' element={<OverSixMonths />} />
               <Route path='/companies' element={<Companies />} />
+              <Route path='/employees' element={<Employees />} />
             </Route>
           </Routes>
         </ThemeProvider>

@@ -59,7 +59,7 @@ const EmployeesLiveInBulgaria = () => {
 
     return (
         <Box m="1.5rem 2.5rem">
-            <Header title="Employees" subtitle="List of Employees that live in Bulgaria and in the company more than 3 years" />
+            <Header title="Employees" subtitle="List of Employees that live in Bulgaria and in the company more than 10 years" />
             <Box mt="40px" height="75vh"
                 sx={{
                     "& .MuiDataGrid-root": {

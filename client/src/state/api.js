@@ -3,7 +3,7 @@ import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 export const api = createApi({
     baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
     reducerPath: 'adminApi',
-    tagTypes: ['EmployeesLiveInBulgaria', 'AllEmployeesInTeam', 'AverageSalary', 'EmployeesOverSixMonths', 'Companies', 'Post', 'AddCompany', 'DeleteCompany'],
+    tagTypes: ['EmployeesLiveInBulgaria', 'AllEmployeesInTeam', 'AverageSalary', 'EmployeesOverSixMonths', 'Companies', 'Post', 'AddCompany', 'DeleteCompany', 'Employees', 'DeleteEmployee', 'UpdateEmployee', 'CreateEmployee'],
     endpoints: (build) => ({
         getEmployeesLiveInBulgaria: build.query({
             query: () => 'employees/bulgarian',
@@ -24,6 +24,10 @@ export const api = createApi({
         getCompanies: build.query({
             query: () => 'companies',
             providesTags: ['Companies']
+        }),
+        getEmployees: build.query({
+            query: () => 'employees',
+            providesTags: ['Employees']
         }),
         addUpdateCompany: build.mutation({
             query: (payload) => ({
@@ -57,7 +61,39 @@ export const api = createApi({
             }),
             invalidatesTags: ['DeleteCompany'],
         }),
+        deleteEmployee: build.mutation({
+            query: (id) => ({
+                url: `employees/${id}`,
+                method: 'DELETE',
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            }),
+            invalidatesTags: ['DeleteEmployee'],
+        }),
+        updateEmployee: build.mutation({
+            query: (payload) => ({
+                url: `employees/${payload.id}`,
+                method: 'PUT',
+                body: payload,
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            }),
+            invalidatesTags: ['UpdateEmployee'],
+        }),
+        createEmployee: build.mutation({
+            query: (payload) => ({
+                url: `employees/create`,
+                method: 'POST',
+                body: payload,
+                headers: {
+                    'Content-type': 'application/json; charset=UTF-8',
+                },
+            }),
+            invalidatesTags: ['CreateEmployee'],
+        }),
     }),
 })
 
-export const { useGetEmployeesLiveInBulgariaQuery, useGetAllEmployeesInTeamQuery, useGetAverageSalaryQuery, useGetEmployeesOverSixMonthsQuery, useGetCompaniesQuery, useAddUpdateCompanyMutation, useAddCompanyMutation, useDeleteCompanyMutation } = api;
+export const { useGetEmployeesLiveInBulgariaQuery, useGetAllEmployeesInTeamQuery, useGetAverageSalaryQuery, useGetEmployeesOverSixMonthsQuery, useGetCompaniesQuery, useAddUpdateCompanyMutation, useAddCompanyMutation, useDeleteCompanyMutation, useGetEmployeesQuery, useDeleteEmployeeMutation, useUpdateEmployeeMutation, useCreateEmployeeMutation } = api;

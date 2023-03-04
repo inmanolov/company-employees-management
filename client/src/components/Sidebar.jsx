@@ -41,7 +41,7 @@ const navItems = [
     },
     {
         text: "Companies",
-        headerName: "Companies",
+        headerName: "CRUD",
         icon: null,
     },
     {
@@ -50,12 +50,17 @@ const navItems = [
         icon: <PublicOutlined />,
     },
     {
+        text: "employees",
+        headerName: "CRUD Employees",
+        icon: <Groups2Outlined />,
+    },
+    {
         text: "Employees Facing",
         headerName: "Employees Facing",
         icon: null,
     },
     {
-        text: "Employees",
+        text: "Employees-in-bg",
         headerName: "Employees",
         icon: <Groups2Outlined />,
     },
@@ -78,36 +83,6 @@ const navItems = [
         text: "Average",
         headerName: "Average Salary",
         icon: <ReceiptLongOutlined />,
-    },
-    {
-        text: "Daily",
-        headerName: "Daily",
-        icon: <TodayOutlined />,
-    },
-    {
-        text: "Monthly",
-        headerName: "Monthly",
-        icon: <CalendarMonthOutlined />,
-    },
-    {
-        text: "Breakdown",
-        headerName: "Breakdown",
-        icon: <PieChartOutlined />,
-    },
-    {
-        text: "Management",
-        headerName: "Management",
-        icon: null,
-    },
-    {
-        text: "Admin",
-        headerName: "Admin",
-        icon: <AdminPanelSettingsOutlined />,
-    },
-    {
-        text: "Performance",
-        headerName: "Performance",
-        icon: <TrendingUpOutlined />,
     },
 ];
 
