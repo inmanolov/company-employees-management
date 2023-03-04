@@ -9,52 +9,6 @@ import FlexBetween from "components/FlexBetween";
 
 import Header from "components/Header";
 
-const columns = [
-    {
-        field: "username",
-        headerName: "Username",
-        flex: 0.5,
-    },
-    {
-        field: "first_name",
-        headerName: "First Name",
-        flex: 0.5,
-    },
-    {
-        field: "last_name",
-        headerName: "Last Name",
-        flex: 0.5,
-    },
-    // {
-    //     field: "country",
-    //     headerName: "Country",
-    //     flex: 0.4,
-    // },
-    // {
-    //     field: "department",
-    //     headerName: "Department",
-    //     flex: 1,
-    // },
-    // {
-    //     field: "position",
-    //     headerName: "Position",
-    //     flex: 1,
-    // },
-    // {
-    //     field: "description",
-    //     headerName: "Description",
-    //     flex: 1,
-    // },
-    // {
-    //     field: "startDate",
-    //     headerName: "From",
-    //     flex: 0.5,
-    //     renderCell: (params) => {
-    //         return params.value.slice(0, 10)
-    //     },
-    // },
-];
-
 const EmployeesInTeam = () => {
     const theme = useTheme();
     const { data, isLoading } = useGetAllEmployeesInTeamQuery();
@@ -70,6 +24,8 @@ const EmployeesInTeam = () => {
             setTeams(getEmployees(data));
         }
     }, [data])
+
+    console.log(teams)
 
     // const teams = getEmployees(data);
 
