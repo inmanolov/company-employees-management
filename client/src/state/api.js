@@ -1,7 +1,7 @@
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
 export const api = createApi({
-    baseQuery: fetchBaseQuery({ baseUrl: process.env.REACT_APP_BASE_URL }),
+    baseQuery: fetchBaseQuery({ baseUrl: "https://company-employees-management.onrender.com" }),
     reducerPath: 'adminApi',
     tagTypes: ['EmployeesLiveInBulgaria', 'AllEmployeesInTeam', 'AverageSalary', 'EmployeesOverSixMonths', 'Companies', 'Post', 'AddCompany', 'DeleteCompany', 'Employees', 'DeleteEmployee', 'UpdateEmployee', 'CreateEmployee'],
     endpoints: (build) => ({

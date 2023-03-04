@@ -178,7 +178,7 @@ const Employees = () => {
                         open={isOpen}
                         anchorEl={anchorEl}
                     >
-                        <Box sx={{ border: 1, p: 1, bgcolor: '#D3D3D3', mb: "11px" }}>
+                        <Box sx={{ border: 1, p: 1, bgcolor: '#5A5A5A', mb: "11px" }}>
                             All fields except "Date end" must be filed
                         </Box>
                     </Popper>
