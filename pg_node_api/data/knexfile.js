@@ -8,7 +8,7 @@ dotenv.config();
 
 const development = {
   client: 'pg',
-  connection: "postgres://wawjatbn:UdJheMNpxa7rtOvZjeSlCnxFkk8qs_vc@mouse.db.elephantsql.com/wawjatbn",
+  connection: process.env.DB_URL,
   migrations: {
     directory: './migrations',
   },

@@ -4,7 +4,7 @@ export const getCompanies = async(req, res) => {
     try {
         const companies = await knex('companies')
         .select()
-        .orderBy('id')
+        .orderBy('id', 'desc')
 
         res.status(200).json(companies);
     } catch (error) {

@@ -28,11 +28,6 @@ import {
 const Navbar = ({ setIsSidebarOpen, isSidebarOpen }) => {
     const dispatch = useDispatch();
     const theme = useTheme();
-
-    const [anchorEl, setAnchorEl] = useState(null);
-    const isOpen = Boolean(anchorEl);
-    const handleClick = (e) => setAnchorEl(e.currentTarget);
-    const handleClose = () => setAnchorEl(null);
     return (
         <AppBar
             sx={{
@@ -48,7 +43,7 @@ const Navbar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                     <IconButton onClick={(prevSate) => setIsSidebarOpen(!isSidebarOpen)}>
                         <MenuIcon />
                     </IconButton>
-                    <FlexBetween
+                    {/* <FlexBetween
                         backgroundColor={theme.palette.background.alt}
                         borderRadius="9px"
                         gap="3rem"
@@ -58,7 +53,7 @@ const Navbar = ({ setIsSidebarOpen, isSidebarOpen }) => {
                         <IconButton>
                             <Search />
                         </IconButton>
-                    </FlexBetween>
+                    </FlexBetween> */}
                 </FlexBetween>
 
                 {/* RIGHT SIDE */}
