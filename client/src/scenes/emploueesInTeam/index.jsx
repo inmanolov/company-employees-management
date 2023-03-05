@@ -25,8 +25,6 @@ const EmployeesInTeam = () => {
         }
     }, [data])
 
-    console.log(teams)
-
     // const teams = getEmployees(data);
 
     // console.log('teams Object', Object.entries(teams[0]));
